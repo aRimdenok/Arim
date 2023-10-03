@@ -1,78 +1,141 @@
-ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
-            center: [53.56969396504157,26.351881722333125],
-            zoom: 16
-        }, {
-            searchControlProvider: 'yandex#search'
-        }),
+* {
+margin: 0px;
+padding: 0px;
+font-size:15px;
+font-family:Arial;
+font-weight: normal;
+color:#000000; 
+}
 
-        // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-        ),
+a {color: #66ff33; font-weight: bold; text-decoration: none;}
+a:hover {color: #8e1414; font-weight: bold; text-decoration: underline;}
+a:active {color: #8e1414; font-weight: bold; text-decoration: underline;}
 
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Собственный значок метки',
-            balloonContent: 'Это красивая метка'
-        }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
-            // Своё изображение иконки метки.
-            iconImageHref: '',
-            // Размеры метки.
-            iconImageSize: [30, 42],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-5, -38]
-        }),
+.conteiner {
+width: 100%;
+margin: 0px;
+background-color: #c5a78a;
+}
 
-        myPlacemark1 = new ymaps.Placemark([53.57053696183328,26.361215809704934], {
-            hintContent: 'Стоянка № 1',
-           
-            balloonContent: 'Здесь были найдены различные приспособления труда первоначальных общин славян-индоевропейцев, который от кочующе-животноводческого типа жизни постепенно перешли к оседлому, к обработке земли, огородничеству и земледелию.  Данные археологические объекты внесены в охраняемые зоны историко-культурных ценностей',
-            iconContent: ''
-        }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#imageWithContent',
-            // Своё изображение иконки метки.
-            iconImageHref: 'ball.png',
-            // Размеры метки.
-            iconImageSize: [70, 100],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-24, -24],
-            // Смещение слоя с содержимым относительно слоя с картинкой.
-            iconContentOffset: [15, 15],
-            // Макет содержимого.
-            iconContentLayout: MyIconContentLayout
-        });
-        myPlacemarkWithContent = new ymaps.Placemark([53.5687487667421,26.34666750800816], {
-            hintContent: 'Бюст герою СССР Царюку В.З',
-           
-            balloonContent: 'Среди организаторов и руководителей антифашистского подполья и партизанского движения на территории Беларуси почетное место принадлежит нашему земляку Герою Советского Союза Владимиру Царюку. В память о славном земляке в агрогородке Еремичи установлен бюст Героя Советского Союза ',
-            iconContent: ''
-        }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#imageWithContent',
-            // Своё изображение иконки метки.
-            iconImageHref: 'bust.png',
-            // Размеры метки.
-            iconImageSize: [60, 100],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-24, -24],
-            // Смещение слоя с содержимым относительно слоя с картинкой.
-            iconContentOffset: [15, 15],
-            // Макет содержимого.
-            iconContentLayout: MyIconContentLayout
-        });
-    myMap.geoObjects
-        .add(myPlacemark)
-        .add(myPlacemark1)
-        .add(myPlacemarkWithContent);
-       
-        
-});
+
+
+.head {
+width: 1200px;
+height: 200px;
+float: right;
+margin: 0 auto;
+background:  url(img/f11.png) no-repeat;
+}
+
+.head p {
+ padding: 50px; 0 0 30px;
+font-size:32px;
+font-family:Arial;
+font-weight: bold;
+color:#000000;
+float: right;
+
+}
+
+
+.footer {
+min-width: 800px;
+margin: 0 auto;
+height: 10px;
+background-color: #c5a78a;
+}
+
+.telo {
+min-width: 800px;
+margin: 0 auto;
+background: url(img/fon.jpg);
+}
+
+.ochistka {
+clear: both;
+}
+
+/***menu***/
+.menu {
+float:left;
+width: 15%;
+min-width: 210px;
+height: 100%;
+clear: both;
+background-color: #e2d3b4; 
+}
+.menu p {
+font-size:19px;
+font-weight: bold;
+padding: 15px;
+color: #000000;
+}
+.menu2 li {list-style-type: none;  border: solid 1px #ffffff;}
+.menu2 a {padding: 15px; background-color: #e2d3b4; color: #000000; display: block; text-decoration: none; border: solid 1px #ffffff; border-left-width: 30px; border-left-color: #c5a78a;}
+.menu2 a:hover {background-color: #c5a78a; color: #000000; text-decoration: none; border: solid 1px #ffffff; border-left-width: 30px;  border-left-color: #e2d3b4;}
+.activ a {background-color: #c5a78a; font-weight: bold; color: #000000; text-decoration: none; border: solid 1px #ffffff; border-left-width: 30px;  border-left-color: #e2d3b4;}
+
+
+
+/***text***/
+
+.text {
+float:right;
+width: 78%;
+min-width: 500px;
+height: 100%;
+border: solid 1px #c5a78a;
+overflow: auto;
+background-color: #FFFFFF;
+}
+
+.text h2 {
+font-size:24px;
+margin: 20px 0 0 0;
+font-weight: bold;
+color: #000000;
+}
+
+.text p {
+font-size:20px;
+margin: 10px 10px 0 10px;
+color: #000000;
+}
+
+.text i {
+font-size:20px;
+margin: 10px 10px 0 10px;
+color: #000000;
+transform:skew(30deg);
+}
+
+.text em {
+font-size:20px;
+margin: 10px 0 0 0;
+color: #000000;
+font-weight: bold;
+}
+.text li {
+font-size:20px;
+color: #000000;
+margin: 5px 10px 0 40px;
+}
+
+.fig {
+text-align: center;
+}
+
+
+/***footer***/
+
+.footer {
+
+}
+
+
+
+.footer p {
+font-weight: bold;
+padding: 25px 0 0 50px;
+}
+
